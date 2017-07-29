@@ -6,6 +6,7 @@ import {
   View
 } from 'react-native'
 import { NetworkInfo } from 'react-native-network-info'
+import SpeedTest from 'react-native-speed-test/'
 
 export default class App extends Component {
   constructor (props) {
@@ -13,7 +14,8 @@ export default class App extends Component {
     this.state =  {
       ip: '',
       ssid: '',
-      org: ''
+      org: '',
+      speed: ''
     }
   }
 
@@ -21,12 +23,17 @@ export default class App extends Component {
     NetworkInfo.getSSID(ssid => {
       this.setState({ssid})
     })
-    let req = await fetch("https://ipinfo.io/json")
+    let req = await fetch('https://ipinfo.io/json')
     let json = await req.json()
     let { ip, org } = json
     this.setState({
       ip,
       org
+    })
+
+    let speed = await SpeedTest.getSpeed()
+    this.setState({
+      speed
     })
   }
 
@@ -45,6 +52,9 @@ export default class App extends Component {
         </Text>
         <Text style={styles.instructions}>
           {this.state.org}
+        </Text>
+        <Text style={styles.instructions}>
+          {this.state.speed}
         </Text>
       </View>
     )
