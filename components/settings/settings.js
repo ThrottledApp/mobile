@@ -1,15 +1,15 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-export default class Main extends React.Component {
+export default class Settings extends React.Component {
   render () {
-    console.log("rendinerg main")
+    console.log('rendinger stettings')
     return (
-      <View>
+      <View style={{flex: 1}}>
         <Text
           style={{color: 'white'}}
           >
-          Main
+          Settings
         </Text>
       </View>
     )

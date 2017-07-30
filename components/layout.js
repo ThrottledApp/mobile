@@ -1,10 +1,20 @@
 import React from 'react'
 import { View, FlatList, Text, Dimensions } from 'react-native'
 import { Colors } from '../lib/common'
+import Settings from './settings/settings'
+import Main from './main/main'
+import Analytics from './analytics/analytics'
 
 const { width, height } = Dimensions.get('window')
 
 export default class Layout extends React.Component {
+  componentDidMount () {
+    this.layout.scrollToIndex({index: 1})
+  }
+
+  getItemLayout = (data, index) => (
+    { length: width, offset: width * index, index }
+  )
 
   _renderItem = (object) => {
     const { item } = object
@@ -12,16 +22,12 @@ export default class Layout extends React.Component {
       flex: 1,
       width: width,
       height: height,
-      backgroundColor: Colors.primary
+      top: 25
     }
 
     return (
       <View style={style}>
-        <Text
-          style= {{top: 20, color: 'white'}}
-          >
-          {item.key}
-        </Text>
+          {item.component}
       </View>
     )
   }
@@ -29,23 +35,25 @@ export default class Layout extends React.Component {
   render () {
     const data = [
       {
-        page: 'settings',
-        component: ''
+        key: 'settings',
+        component: <Settings />
       },
       {
-        page: 'main',
-        component: ''
+        key: 'main',
+        component: <Main />
       },
       {
-        page: 'analytics',
-        component: ''
+        key: 'analytics',
+        component: <Analytics />
       }
     ]
     return (
       <View style={{flex:  1, justifyContent: 'center'}}>
         <FlatList
-          data={[{key: 'a', backgroundColor: 'red'}, {key: 'b', backgroundColor: 'blue'}]}
+          ref={(ref) => { this.layout = ref }}
+          data={data}
           renderItem={this._renderItem}
+          getItemLayout={this.getItemLayout}
           horizontal
           pagingEnabled
         />

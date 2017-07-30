@@ -1,15 +1,14 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-export default class Main extends React.Component {
+export default class Analytics extends React.Component {
   render () {
-    console.log("rendinerg main")
     return (
       <View>
         <Text
           style={{color: 'white'}}
           >
-          Main
+          Analytics
         </Text>
       </View>
     )
