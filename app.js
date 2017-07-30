@@ -8,6 +8,7 @@ import {
 import { NetworkInfo } from 'react-native-network-info'
 import SpeedTest from 'react-native-speed-test/'
 import Layout from './components/layout'
+import { Colors } from './lib/common'
 
 export default class App extends Component {
   constructor (props) {
@@ -54,7 +55,8 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: Colors.primary,
+
   },
   welcome: {
     fontSize: 20,
