@@ -3,7 +3,6 @@ import { View, Text } from 'react-native'
 
 export default class Main extends React.Component {
   render () {
-    console.log("rendinerg main")
     return (
       <View>
         <Text

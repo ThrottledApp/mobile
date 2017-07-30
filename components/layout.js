@@ -27,7 +27,7 @@ export default class Layout extends React.Component {
 
     return (
       <View style={style}>
-          {item.component}
+        {item.component}
       </View>
     )
   }
