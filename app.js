@@ -7,6 +7,7 @@ import {
 } from 'react-native'
 import { NetworkInfo } from 'react-native-network-info'
 import SpeedTest from 'react-native-speed-test/'
+import Layout from './components/layout'
 
 export default class App extends Component {
   constructor (props) {
@@ -44,18 +45,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          {this.state.ip}
-        </Text>
-        <Text style={styles.instructions}>
-          {this.state.ssid}
-        </Text>
-        <Text style={styles.instructions}>
-          {this.state.org}
-        </Text>
-        <Text style={styles.instructions}>
-          {this.state.speed}
-        </Text>
+        <Layout style={{flex: 1}}/>
       </View>
     )
   }
@@ -64,8 +54,6 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
