@@ -42,7 +42,7 @@ export default class Main extends React.Component {
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <Text
-          style={{color: 'white', fontSize: 50}}
+          style={{color: 'white', fontSize: 80}}
           >
             {this.state.speed}
         </Text>
