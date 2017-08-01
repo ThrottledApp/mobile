@@ -61,9 +61,6 @@ console.log('yoooo')
       flex: 1,
       width: width,
       height: height,
-      paddingLeft: 2,
-      paddingRight: 2,
-      top: 25
     }
 
     return (
@@ -97,7 +94,7 @@ console.log('yoooo')
           renderItem={this._renderItem}
           getItemLayout={this.getItemLayout}
           horizontal
-          scrollEventThrottle={32}
+          scrollEventThrottle={80}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
           pagingEnabled
