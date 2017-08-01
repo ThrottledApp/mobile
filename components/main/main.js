@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Button } from 'react-native'
 import { NetworkInfo } from 'react-native-network-info'
 import SpeedTest from 'react-native-speed-test/'
 
@@ -26,7 +26,12 @@ export default class Main extends React.Component {
       ip,
       org
     })
+  }
 
+  _getSpeed = async () => {
+    this.setState({
+      speed: '~'
+    })
     let speed = await SpeedTest.getSpeed()
     console.log(speed)
     this.setState({
@@ -51,6 +56,10 @@ export default class Main extends React.Component {
           >
             AVERAGE SPEED
         </Text>
+        <Button
+          onPress={this._getSpeed}
+          title={'GET SPEED'}
+        />
       </View>
     )
   }
