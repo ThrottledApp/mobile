@@ -1,0 +1,15 @@
+PODS:
+  - hpple (0.2.0)
+  - WKZombie (1.0.8):
+    - hpple (= 0.2.0)
+
+DEPENDENCIES:
+  - WKZombie (~> 1.0)
+
+SPEC CHECKSUMS:
+  hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
+  WKZombie: a4f5e81599c93225526a42e318535789c3a2a5f7
+
+PODFILE CHECKSUM: b5f081bd4af01c6e8e2ac6453f1e2272eec82623
+
+COCOAPODS: 1.2.0
