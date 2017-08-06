@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, Button } from 'react-native'
 import { NetworkInfo } from 'react-native-network-info'
-import SpeedTest from 'react-native-speed-test/'
+import SpeedTest from '../../lib/speedtest'
 
 export default class Main extends React.Component {
   constructor (props) {
