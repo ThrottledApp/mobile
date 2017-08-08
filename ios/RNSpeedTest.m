@@ -10,12 +10,13 @@ RCT_REMAP_METHOD(getSpeed,
                  findEventsWithResolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
-  NSString *speedTest = [[SpeedTest alloc]test];
+  [[SpeedTest alloc]test:@"okay" block:^(NSString* speed) {
+    resolve(speed);
+  }];
 //    [self testDownloadSpeedWithTimout:5.0 completionHandler:^(CGFloat megabytesPerSecond, NSError *error) {
 //        NSString *str = [NSString stringWithFormat:@"%.1f", megabytesPerSecond];
 //        NSLog(@"%0.1f; error = %@", megabytesPerSecond, error);
-  NSLog(@"%@", speedTest);
-  resolve(speedTest);
+  
 
 
 }

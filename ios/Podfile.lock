@@ -1,15 +1,24 @@
 PODS:
+  - Erik (2.0.2):
+    - Erik/Core (= 2.0.2)
+    - Kanna
+  - Erik/Core (2.0.2):
+    - Kanna
   - hpple (0.2.0)
+  - Kanna (2.2.1)
   - WKZombie (1.0.8):
     - hpple (= 0.2.0)
 
 DEPENDENCIES:
+  - Erik
   - WKZombie (~> 1.0)
 
 SPEC CHECKSUMS:
+  Erik: 296b5b9e732638dd24415066d7d41ac256a838ae
   hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
+  Kanna: 182789ab065e8f9a6ccc2a74ce6283d3401c0c4a
   WKZombie: a4f5e81599c93225526a42e318535789c3a2a5f7
 
-PODFILE CHECKSUM: b5f081bd4af01c6e8e2ac6453f1e2272eec82623
+PODFILE CHECKSUM: c93808f283464cf0dd624ecd7a83797688433eb5
 
 COCOAPODS: 1.2.0
