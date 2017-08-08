@@ -13,7 +13,7 @@ import WebKit
 @objc
 class SpeedTest: NSObject {
   
-  func test(_ okay: NSString, block: @escaping (_ speed: NSString) -> ()) {
+  func getSpeed(_ okay: NSString, block: @escaping (_ speed: NSString) -> ()) {
       let url = URL(string:"http://www.fast.com")!
       Erik.visit(url: url) { object, error in
         if let e = error {
