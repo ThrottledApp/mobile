@@ -2,6 +2,12 @@ import React from 'react'
 import { View, Text, Button } from 'react-native'
 import { NetworkInfo } from 'react-native-network-info'
 import SpeedTest from '../../lib/speedtest'
+import BackgroundTask from 'react-native-background-task'
+
+BackgroundTask.define(() => {
+  console.log('Hello from a background task')
+  BackgroundTask.finish()
+})
 
 export default class Main extends React.Component {
   constructor (props) {
@@ -12,6 +18,12 @@ export default class Main extends React.Component {
       org: '',
       speed: '~'
     }
+  }
+
+  componentDidMount() {
+    BackgroundTask.schedule({
+      period: 900 // 15 minutes, in seconds
+    })
   }
 
   _getNetworkInformation = async () => {
